@@ -1,63 +1,34 @@
-Pre-Release Warning
-===================
-This library is a release candidate. While we beleive it to work and be feature complete it has not undergone thorough testing so there may be instability and some parts of it may not work properly under certain circumstances. Feel free to submit issues if you come across any problems.
+# Exosite
 
-About the Exosite Particle Library
-=================================
-This library allows you to quickly and easily connect your Particle project directly to Exosite's cloud data platform. See the examples folder for example use. We suggest starting with the [ReadWriteString](https://github.com/exosite-garage/particle_exosite_library/blob/master/firmware/examples/ReadWriteString.ino) example if you are new to Exosite's platform.
+A Particle library for Exosite
 
-Note: A free account on exosite portals is required: https://portals.exosite.com
+## About the Exosite Particle Library
 
-Tested on a [Particle Photon](https://store.particle.io/?product=particle-photon)
+This library allows you to quickly and easily connect your Particle project directly to Exosite's cloud platform as a secure MQTT client. Be sure to check out the examples folder!
 
-License is BSD 3-Clause, Copyright 2015, Exosite LLC (see LICENSE file)
+Note: A free Exosite Business account is required: https://www.exosite.io/
 
-Interface
-=========
+Tested on Particle Photon and Particle Electron: https://store.particle.io/
 
-Constructor
------------
-```cpp
-Exosite(Client *_client);
-```
+## Usage
 
-```cpp
-Exosite(char *_cik, Client *_client);
-```
+Connect your Particle hardware, add the Exosite-MQTT library to your project - as well as the MQTT-TLS library - and directly use or modify one of the included examples.
 
-```cpp
-Exosite(String _cik, Client *_client);
-```
+See the [examples](examples) folder for more details.
 
-`_cik`: This is used to hard code the CIK into the device can either be a `char[]` or a `String` type. This parameter can be omitted when using provisioning.
+## Documentation
 
-`_client`: This is the interface to what ever network device you're using. On the current Particle Photon it will always be a `TCPClient`.
+To learn more about Exosite in general, check out our Docs: https://docs.exosite.io/account/
 
-writeRead
----------
+For a bit more context about Device Connectivity, see our IoT Connectors Overview: https://docs.exosite.io/account/iot-connectors/iot-connectors-overview
 
-```cpp
-boolean Exosite::writeRead(char* writeString, char* readString, char** returnString)
-```
+To understand more about our Condition Monitoring solution, reference the ExoSense™ Overview: https://docs.exosite.io/exosense/
 
-```cpp
-boolean Exosite::writeRead(String writeString, String readString, String &returnString)
-```
+## Contributing
 
-`writeString`: This sets the values to write to certain datasources. eg. "alias3=value3&alias4=value4"
+This library is known to be functional but has not undergone intensive testing. Please feel free to submit issues if you come across any problems or have any suggestions!
 
-`readString`: This selects which datasources to read by their alias. eg. "alias1&alias2"
+## LICENSE
+Copyright 2020 Exosite LLC support@exosite.com
 
-`returnstring`: This is the string returned with the values requested in `readString`. eg. "alias1=value1&alias2=value2"
-
-provision
----------
-```cpp
-boolean Exosite::provision(char* vendorString, char* modelString, char* snString);
-```
-
-`vendorString`: The string that identifies the device vendor name.
-
-`modelString`: The string that identifies the device unique model ID.
-
-`snString`: The string that identifies the device's serial number.
+Licensed under BSD 3-Clause (See LICENSE.txt)
