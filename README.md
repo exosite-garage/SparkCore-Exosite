@@ -6,7 +6,7 @@ A Particle library for Exosite
 
 This library allows you to quickly and easily connect your Particle project directly to Exosite's cloud platform as a secure MQTT client. Be sure to check out the examples folder!
 
-Note: A free Exosite Business account is required: https://www.exosite.io/
+Note: An Exosite Business account is required: https://www.exosite.io/
 
 Tested on Particle Photon and Particle Electron: https://store.particle.io/
 
@@ -15,6 +15,8 @@ Tested on Particle Photon and Particle Electron: https://store.particle.io/
 Connect your Particle hardware, add the Exosite-MQTT library to your project - as well as the MQTT-TLS library - and directly use or modify one of the included examples.
 
 See the [examples](examples) folder for more details.
+
+Make use of the "Particle Connector Template" in your Exosite Business Account's IoT Marketplace.
 
 ## Documentation
 
